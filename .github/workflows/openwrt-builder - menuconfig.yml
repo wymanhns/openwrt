@@ -82,11 +82,11 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P2_SH
         
     
-    - name: Setup tmate session For User > cd openwrt && make menuconfig
+    - name: 建立 tmate 進程請按連結進入修改 > cd openwrt && make menuconfig
       uses: mxschmitt/action-tmate@v3
-      #timeout-minutes: 20
+      timeout-minutes: 180
       with:
-        detached: false
+        detached: true
 
     - name: 下載包文件
       id: package
