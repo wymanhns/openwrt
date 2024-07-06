@@ -90,5 +90,8 @@ jobs:
       uses: Warpbuilds/action-debugger@v1.3
       with:
         detached: true
-      cp GITHUB_WORKSPACE/openwrt/.config GITHUB_WORKSPACE/new.config
+
+    - name: 備份自訂配置
+      run: |
+        cp GITHUB_WORKSPACE/openwrt/.config GITHUB_WORKSPACE/new.config
     
