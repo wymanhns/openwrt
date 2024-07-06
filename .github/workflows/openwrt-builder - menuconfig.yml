@@ -82,5 +82,15 @@ jobs:
         detached: false
 
     - name: 備份自訂配置
+    - name: Commit files
       run: |
-        cp $GITHUB_WORKSPACE/openwrt/.config $GITHUB_WORKSPACE/new.config
+        cd openwrt
+        cp .config new.config
+        #echo "Test push commit to the remote in the workflow" >> test.txt
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+        git add -A
+        git commit -m "Update new.config"
+        git push
+        
