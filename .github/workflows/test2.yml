@@ -1,5 +1,6 @@
 name: testpull
 on:
+  pull_request:
   workflow_dispatch:
 
 env:
@@ -21,9 +22,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-      with:
-        ref: ${{ github.head_ref }}
-        fetch-depth: 0
+      #with:
+      #  ref: ${{ github.head_ref }}
+      #  fetch-depth: 0
 
     - name: 初始化編譯環境
       env:
