@@ -84,7 +84,7 @@ jobs:
     
     - name: 建立 tmate 進程請按連結進入修改 > cd openwrt && make menuconfig
       uses: mxschmitt/action-tmate@v3
-      timeout-minutes: 600
+      timeout-minutes: 120
       with:
         detached: false
 
