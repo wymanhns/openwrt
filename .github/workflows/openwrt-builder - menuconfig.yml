@@ -84,9 +84,9 @@ jobs:
     
     - name: Setup tmate session For User > cd openwrt && make menuconfig
       uses: mxschmitt/action-tmate@v3
-      timeout-minutes: 5
+      #timeout-minutes: 20
       with:
-        detached: true
+        detached: false
 
     - name: 下載包文件
       id: package
