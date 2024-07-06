@@ -1,5 +1,5 @@
 name: testpull
-on: [pull_request, pull_request_target]
+on: pull
 
 jobs:
   build:
