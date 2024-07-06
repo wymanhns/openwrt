@@ -27,7 +27,7 @@ env:
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
-  DEL_RELEASE: false
+  DEL_RELEASE: true
   TZ: Asia/Shanghai
 
 jobs:
