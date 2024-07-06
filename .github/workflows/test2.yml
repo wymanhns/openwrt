@@ -2,6 +2,20 @@ name: testpull
 on:
   workflow_dispatch:
 
+env:
+  REPO_URL: https://github.com/openwrt/openwrt
+  REPO_BRANCH: v23.05.3
+  FEEDS_CONF: feeds.conf.default
+  CONFIG_FILE: .config
+  BANNER_FILE: banner
+  DIY_P1_SH: diy-part1.sh
+  DIY_P2_SH: diy-part2.sh
+  UPLOAD_BIN_DIR: false
+  UPLOAD_FIRMWARE: true
+  UPLOAD_RELEASE: true
+  DEL_RELEASE: false
+  TZ: Asia/Shanghai
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -10,7 +24,14 @@ jobs:
       with:
         ref: ${{ github.head_ref }}
         fetch-depth: 0
-        
+
+    - name: 複製原始碼
+      working-directory: /workdir
+      run: |
+        df -hT $PWD
+        git clone $REPO_URL -b $REPO_BRANCH openwrt
+        ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
+                
     - name: Commit files
       run: |
         echo "Test push commit to the remote in the workflow" >> test.txt
