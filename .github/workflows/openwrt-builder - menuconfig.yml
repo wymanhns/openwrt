@@ -66,11 +66,11 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
-    - name: 更新提要庫
-      run: cd openwrt && ./scripts/feeds update -a
+    #- name: 更新提要庫
+    #  run: cd openwrt && ./scripts/feeds update -a
 
-    - name: 安裝提要庫
-      run: cd openwrt && ./scripts/feeds install -a
+    #- name: 安裝提要庫
+    #  run: cd openwrt && ./scripts/feeds install -a
 
     - name: 載入自訂配置
       run: |
