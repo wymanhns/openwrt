@@ -82,7 +82,6 @@ jobs:
         detached: false
 
     - name: 備份自訂配置
-    - name: Commit files
       run: |
         cd openwrt
         cp .config new.config
