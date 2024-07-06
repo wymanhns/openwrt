@@ -91,6 +91,6 @@ jobs:
     - name: Setup interactive ssh session
       uses: Warpbuilds/action-debugger@v1.3
         with:
-        detached: false
+        detached: true
       cp GITHUB_WORKSPACE/openwrt/.config GITHUB_WORKSPACE/new.config
     
