@@ -1,9 +1,9 @@
-name: CI
-on: [push]
+name: Ubuntu
+on: push
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v1
     - name: Setup tmate session
-      uses: mxschmitt/action-tmate@v3
+      uses: mxschmitt/action-tmate@v1
