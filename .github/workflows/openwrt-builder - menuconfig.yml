@@ -86,8 +86,7 @@ jobs:
 
     - name: 備份自訂配置
       run: |
-        cd openwrt
-        cp .config new.config
+        cp openwrt/.config new.config
         #echo "Test push commit to the remote in the workflow" >> test.txt
         git config --global user.name "github-actions[bot]"
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
